@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "producto A",
+        "urlPhoto": "src/assets/logo.jpg",
+        "description": "esta es una descripcion generica de un producto generico",
+        "stock": 5
+    },
+    {
+        "id": 2,
+        "name": "producto B",
+        "urlPhoto": "src/assets/logo.jpg",
+        "description": "esta es una descripcion generica de un producto generico",
+        "stock": 5
+    },
+    {
+        "id": 3,
+        "name": "producto C",
+        "urlPhoto": "src/assets/logo.jpg",
+        "description": "esta es una descripcion generica de un producto generico",
+        "stock": 5
+    },
+    {
+        "id": 4,
+        "name": "producto D",
+        "urlPhoto": "src/assets/logo.jpg",
+        "description": "esta es una descripcion generica de un producto generico",
+        "stock": 5
+    }
+]

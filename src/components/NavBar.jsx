@@ -3,8 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWiget from './CartWiget';
-
-
+import { Link } from 'react-router-dom';
 function NavBar() {
     return (
         <>
@@ -18,8 +17,12 @@ function NavBar() {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="#action1">Inicio</Nav.Link>
-                            {/* <Nav.Link href="#action2">Link</Nav.Link> */}
+                            <Link to="/" style={{textDecoration: 'none'}}>
+                                <Nav.Link href="kjkl">Inicio</Nav.Link>
+                            </Link>
+                            <Link to="/catalog" style={{textDecoration: 'none'}}>
+                                <Nav.Link href="s">Catalogo</Nav.Link>
+                            </Link>
                             <NavDropdown title="Categoria" id="navbarScrollingDropdown" menuVariant="dark">
                                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action4">
