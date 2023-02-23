@@ -1,30 +1,38 @@
 [
     {
         "id": 1,
+        "price": 200,
         "name": "producto A",
-        "urlPhoto": "src/assets/logo.jpg",
+        "urlPhoto": "https://e7.pngegg.com/pngimages/642/310/png-clipart-weapon-soldier-gun-sword-drawing-weapon-magic-pin-weapon.png",
         "description": "esta es una descripcion generica de un producto generico",
-        "stock": 5
+        "stock": 5,
+        "category": "armas"
     },
     {
         "id": 2,
+        "price": 100,
         "name": "producto B",
-        "urlPhoto": "src/assets/logo.jpg",
+        "urlPhoto": "https://cdn.pixabay.com/photo/2022/04/30/14/24/magic-7165686_1280.png",
         "description": "esta es una descripcion generica de un producto generico",
-        "stock": 5
+        "stock": 5,
+        "category": "posiones"
     },
     {
         "id": 3,
+        "price": 400,
         "name": "producto C",
-        "urlPhoto": "src/assets/logo.jpg",
+        "urlPhoto": "https://e7.pngegg.com/pngimages/842/369/png-clipart-robe-body-armor-magic-fantasy-metal-standards-miscellaneous-leather.png",
         "description": "esta es una descripcion generica de un producto generico",
-        "stock": 5
+        "stock": 5,
+        "category": "armaduras"
     },
     {
         "id": 4,
+        "price": 700,
         "name": "producto D",
-        "urlPhoto": "src/assets/logo.jpg",
+        "urlPhoto": "https://e1.pngegg.com/pngimages/42/31/png-clipart-weapon-adopts-4-closed-scythe-sword-spear.png",
         "description": "esta es una descripcion generica de un producto generico",
-        "stock": 5
+        "stock": 5,
+        "category": "armas"
     }
 ]

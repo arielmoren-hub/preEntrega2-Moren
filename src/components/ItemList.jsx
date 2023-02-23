@@ -1,5 +1,5 @@
 import React from 'react'
-import Items from './Items'
+import Item from './Item'
 
 function ItemList({products}) {
     
@@ -7,7 +7,7 @@ function ItemList({products}) {
     <div  style={{ padding: '0.7rem' , display: 'flex' }}>
         {
             products.map(product => (
-                <Items
+                <Item
                   item={product}
                 />
             ))

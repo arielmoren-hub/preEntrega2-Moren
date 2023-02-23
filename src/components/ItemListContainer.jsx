@@ -1,35 +1,19 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
-import data from 'D:/cosas/cursos/React/preentrega2/data.json'
+import data from '/data.json'
 
 function ItemListContainer(greeting) {
-
-    const getProducto = () => {
-        return new Promise((resolve, reject) => {
-            if (data.length === 0) {
-                reject(new Error("No hay Productos"))
-            }
-            setTimeout(() => {
-                resolve(data)
-            }, 2000);
-        })
-    }
-
-    async function fetchingProductos(){
-        try{
-            const datosFetched = await getProducto();
-        }catch(err){
-            <h1>{err}</h1>
-        }
-    }
-
-    fetchingProductos();
+    const { category } = useParams();
+   
 
 
-
+    const filter = data.filter((product) => product.category === category)
     return (
         <div style={{ padding: '0.7rem'}}>
-            <ItemList products={data}/>
+            {
+             category ? <ItemList products={filter}/> :  <ItemList products={data}/>
+            }
         </div>
     )
 }
