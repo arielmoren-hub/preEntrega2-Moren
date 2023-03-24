@@ -1,20 +1,16 @@
-import React from 'react'
-import Item from './Item'
+import { useState } from "react";
+import Item from "./Item";
+import { Link } from "react-router-dom";
+import { Container, Row } from "react-bootstrap";
 
-function ItemList({products}) {
-    
+export default function ItemList({ productos }) {
   return (
-    <div  style={{ padding: '0.7rem' , display: 'flex' }}>
-        {
-            products.map(product => (
-                <Item
-                  item={product}
-                />
-            ))
-        }
-    
-    </div>
-  )
+    <Container className="cardContainer" fluid>
+      <Row className="w-100">
+        {productos.map((product) => (
+          <Item item={product} key={product.id} index={product.id} />
+        ))}
+      </Row>
+    </Container>
+  );
 }
-
-export default ItemList

@@ -1,20 +1,21 @@
-import Carousel from 'react-bootstrap/Carousel';
+import { Col, Container, Row } from "react-bootstrap";
+import testCanvas from "../assets/images/testCanvas.jpg";
+import "../styles/Home.css";
+import ItemListContainer from "./ItemListContainer";
 
-function Home() {
-    return (
-        <div style={{ width: "100%", display: 'flex' ,justifyContent: 'center' }}>
-            
-                <div style={{ width: "70%"}}>
-
-                    <img 
-                        className="d-block w-100"
-                        src="https://familytime.lidianieto.com/wp-content/uploads/2020/04/valores-magia.jpg"
-                        alt="Second slide"
-                    />
-                </div>
-
-        </div>
-    )
+export default function Home(props) {
+  return (
+    <>
+      <Container className="homeContainer" fluid>
+        <Row className="d-flex justify-content-center ">
+          <Col xs={12} className="canvasImageBox">
+            <img src={testCanvas} alt="canvas" className="canvasImage" />
+          </Col>
+          <Col xs={12}>
+            <ItemListContainer />
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
 }
-
-export default Home

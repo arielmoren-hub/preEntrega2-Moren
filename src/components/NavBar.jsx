@@ -1,57 +1,42 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import CartWiget from "./CartWiget";
-import { Link } from "react-router-dom";
-function NavBar() {
-  return (
-    <>
-      <Navbar bg="secondary" expand="lg">
-        <Container fluid>
-          <Link to={"/"} style={{textDecoration: 'none'}}>
-            <Navbar.Brand href="#">Merlin</Navbar.Brand>
+import { Link, NavLink } from "react-router-dom";
+import CartWidget from "./CartWidget";
+import "./../styles/NavigationBar.css";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import UserWidget from "./UserWidget";
 
-          </Link>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              
-              <Link to="/catalogue" style={{ textDecoration: "none" }}>
-                <Nav.Link href="s">Catalogo</Nav.Link>
-              </Link>
-              <NavDropdown
-                title="Categoria"
-                id="navbarScrollingDropdown"
-                menuVariant="dark"
-              >
-                <Link to={`/category/${"armas"}`} style={{textDecoration: 'none'}}>
-                <NavDropdown.Item href="#action3">armas</NavDropdown.Item>
-                </Link>
-                <Link to={`/category/${"posiones"}`} style={{textDecoration: 'none'}}>
-                <NavDropdown.Item href="#action4">posiones</NavDropdown.Item>
-                </Link>
-                {/* <NavDropdown.Divider /> */}
-                <Link to={`/category/${"armaduras"}`} style={{textDecoration: 'none'}}>
-                <NavDropdown.Item href="#action5">armaduras</NavDropdown.Item>
-                </Link>
-              </NavDropdown>
-              {/* <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link> */}
-            </Nav>
-            <div className="d-flex">
-              <CartWiget />
-            </div>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </>
+export default function NavigationBar() {
+  return (
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand as={Link} to={"/"}>
+          Pacha Creaciones 3D
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link}>Pricing</Nav.Link>
+            <NavDropdown title="Categorias" id="collasible-nav-dropdown">
+              <NavDropdown.Item as={Link} to={"category/Baterias"}>
+                Baterias
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to={"category/Radios"}>
+                Radios
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to={"category/pipas"}>
+                Pipas
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={Link} to={"category/kits"}>
+                Kits
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav>
+            <UserWidget />
+            <CartWidget />
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
-
-export default NavBar;

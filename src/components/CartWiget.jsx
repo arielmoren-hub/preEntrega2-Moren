@@ -1,17 +1,24 @@
-import React from 'react'
-import { FaOpencart } from "react-icons/fa"
+import { useContext } from "react";
+import { CartFill } from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 
-function CartWiget() {
-    return (
-        <div className='CartWiget-container'
-            style={{display: 'flex'}}
-        >
-            <FaOpencart />
-            <div>
-                <span>1</span>
-            </div>
-        </div>
-    )
+
+export default function CartWidget() {
+  const { quantity, total } = useContext(CartContext);
+  return (
+    <Link
+      to={"/cart"}
+      style={{ display: "flex", alignItems: "center" }}
+      className="navItemLogo"
+    >
+      <CartFill />
+      {quantity > 0 && (
+        <>
+          <span className="cartItemCounter">{quantity}</span>
+          <span className="cartItemCounter">${total}</span>
+        </>
+      )}
+    </Link>
+  );
 }
-
-export default CartWiget
